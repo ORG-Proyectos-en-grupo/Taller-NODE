@@ -11,17 +11,27 @@
         <hr>
         <div class="nav">
             <a href="/create">+ Crear Usuario</a>
-
             <!-- Lita de Usuarios-->
-            <ul> 
+            <input type="text" id="search" placeholder="Buscar usuario por nombre" onkeyup="filterUsers()">
+            <ul id="elementos"> 
                 <% users.forEach(user => {  %>  
-                    <li>
-                        <%= user.name %> -  - <%= user.email %> -   - <%= user.age %> años    ->
+                    <li class="user-item">
+                        <%= user.name %> - <%= user.email %> - <%= user.age %> años ->
                         <a href="/edit/<%= user._id %>">Edit</a>
                         <a href="/delete/<%= user._id %>">Eliminar</a>
                     </li>
-                <%   }) %>
+                <% }) %>
             </ul>
+            <script>
+                function filterUsers() {
+                    const searchInput = document.getElementById('search').value.toLowerCase();
+                    const userItems = document.querySelectorAll('.user-item');
+                    userItems.forEach(item => {
+                        const userName = item.textContent.toLowerCase();
+                        item.style.display = userName.includes(searchInput) ? '' : 'none';
+                    });
+                }
+            </script>
         </div>
     </div>
 </body>
