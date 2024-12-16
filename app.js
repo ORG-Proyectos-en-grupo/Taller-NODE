@@ -15,6 +15,8 @@ app.set('view engine', 'ejs');
 // rutas
 app.use('/', userRoutes);
 
+app.use(express.static('public'));
+
 // Puerto de la aplicación
 app.listen(3000, ()=> {
     console.log('Servidor corriendo en http://localhost:3000');

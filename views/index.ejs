@@ -1,24 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRUD Básico</title>
+    <link rel="stylesheet" href="/styles/style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Usuarios</h1>
-        <hr>
+        <div id="title">
+            <h1>Usuarios</h1>
+        </div>
         <div class="nav">
-            <a href="/create">+ Crear Usuario</a>
+            <a class = "button" href="/create">+ Crear Usuario</a>
             <!-- Lita de Usuarios-->
-            <input type="text" id="search" placeholder="Buscar usuario por nombre" onkeyup="filterUsers()">
+            <input type="text" id="search" class="search" placeholder="Buscar usuario por nombre" onkeyup="filterUsers()">
             <ul id="elementos"> 
                 <% users.forEach(user => {  %>  
                     <li class="user-item">
-                        <%= user.name %> - <%= user.email %> - <%= user.age %> años ->
-                        <a href="/edit/<%= user._id %>">Edit</a>
-                        <a href="/delete/<%= user._id %>">Eliminar</a>
+                        <div id="name" class="name">
+                            <%= user.name %>
+                        </div>
+                        <div id="email" class="email">
+                            <%= user.email %>
+                        </div>
+                        <div id="age" class="age">
+                            <%= user.age %> años %>
+                        </div>
+                        <a href="/edit/<%= user._id %>" class="option">Edit</a>
+                        <a href="/delete/<%= user._id %>" class="option">Eliminar</a>
                     </li>
                 <% }) %>
             </ul>
