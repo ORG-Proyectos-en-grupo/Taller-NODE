@@ -96,3 +96,40 @@ h1{
     border-radius: 5px;
     background-color: #bdbdbd;
 }
+.space-item{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 0px;
+    height: 80%;
+}
+.Cname{
+    width: 25%;
+    padding: 8px;
+    margin: 0px;
+    border: #000000 1px solid;
+}
+.Cemail{
+    width: 40%;
+    padding: 8px;
+    margin: 0px;
+    border: #000000 1px solid;
+}
+.Cage{
+    width: 25%;
+    padding:8px;
+    margin: 0px;
+    border: #000000 1px solid;
+}
+.text{
+    margin: 1px 20px;
+    padding: 5px;
+}
+#button{
+    margin: 20px;
+}
+#button:hover{
+    background-color: #a73ee9;
+    cursor: pointer;
+    color: aliceblue;
+}
