@@ -8,5 +8,6 @@ router.post('/store', userController.store);
 router.get('/edit/:id', userController.edit); 
 router.post('/update/:id', userController.update);
 router.get('/delete/:id', userController.delete);
+router.get('/search', userController.search);
 
 module.exports = router;
